@@ -1,26 +1,22 @@
-console.log("Hello World");
+// Interface
 
-// Implicit Types
-let helloWorld = "Hello, World!";
-// Explicit Types
-let firstName: string = "Rooney";
-let age: number = 25;
-
-// Tuple
-type stringAndNumber = [string, number];
-
-let x: stringAndNumber = ["Hello", 1];
-
-// Enums
-
-enum Continents {
-  South_America,
-  East_Asia,
-  North_Europe,
-  Australia,
-  Antartica,
-  Africa,
+interface User {
+  name: string;
+  age: number;
 }
 
-// Usage
-let region = Continents.Africa;
+const user: User = {
+  name: "Lutfi",
+  age: 24,
+};
+
+// Composing types -> union
+type WindowStates = "open" | "closed" | "minimized";
+type LockStates = "Locked" | "Unlocked";
+type OddNumberUnderTen = 1 | 3 | 5 | 7 | 9;
+
+const odd: OddNumberUnderTen = 3;
+
+const getLength = (param: string | string[]) => {
+  return param.length;
+};
